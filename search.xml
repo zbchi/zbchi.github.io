@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>解决github Connection closed by port 22</title>
+      <link href="/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/"/>
+      <url>/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/</url>
+      
+        <content type="html"><![CDATA[<p>最近防火墙升级，屏蔽了22端口。GitHub 支持通过 443 端口使用 SSH（因为 443 通常用于 HTTPS 流量，不易被屏蔽）。</p><h2 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> git:(master) git push origin master</span><br><span class="line">Connection closed by 20.205.243.166 port 22</span><br><span class="line">fatal: 无法读取远程仓库。</span><br><span class="line"></span><br><span class="line">请确认您有正确的访问权限并且仓库存在。</span><br></pre></td></tr></table></figure><h1 id="配置SSH默认使用443端口"><a href="#配置SSH默认使用443端口" class="headerlink" title="配置SSH默认使用443端口"></a>配置SSH默认使用443端口</h1><h2 id="1-修改SSH配置文件"><a href="#1-修改SSH配置文件" class="headerlink" title="1.修改SSH配置文件"></a>1.修改SSH配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#添加以下内容</span><br><span class="line">Host github.com</span><br><span class="line">    Hostname ssh.github.com</span><br><span class="line">    Port 443</span><br><span class="line">    User git</span><br></pre></td></tr></table></figure><h2 id="2-设置文件权限"><a href="#2-设置文件权限" class="headerlink" title="2.设置文件权限"></a>2.设置文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 600 ~/.ssh/config</span><br></pre></td></tr></table></figure><h2 id="3-测试连接"><a href="#3-测试连接" class="headerlink" title="3.测试连接"></a>3.测试连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>可以看到</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi guy! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure><p>这样就可以重新 <code>git push origin main/master</code>了</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>无代理下安装V2RayA(Debian/Ubuntu)</title>
       <link href="/2025/04/14/%E6%97%A0%E4%BB%A3%E7%90%86%E4%B8%8B%E5%AE%89%E8%A3%85V2RayA-Debian-Ubuntu/"/>
       <url>/2025/04/14/%E6%97%A0%E4%BB%A3%E7%90%86%E4%B8%8B%E5%AE%89%E8%A3%85V2RayA-Debian-Ubuntu/</url>
