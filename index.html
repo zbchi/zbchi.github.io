@@ -156,6 +156,81 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-云服务器防止被攻击-(Ubuntu-Debian)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/04/23/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%98%B2%E6%AD%A2%E8%A2%AB%E6%94%BB%E5%87%BB-(Ubuntu-Debian)/" class="article-date">
+  	<time datetime="2025-04-23T13:00:28.000Z" itemprop="datePublished">2025-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/04/23/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%98%B2%E6%AD%A2%E8%A2%AB%E6%94%BB%E5%87%BB-(Ubuntu-Debian)/">
+        云服务器防止被攻击(Ubuntu/Debian)
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近云server部署不到一天就被暴力攻击了，甚至直接登录了root账户，还把我自己的本地ip封禁了，现在正好列举一些防止被网络攻击的方法</p>
+<p>公网ip实属难得，有利有弊，一方面可以让自己非常快地连接server并且搭建网站，另一方面非常容易被坏人攻击</p>
+<h2 id="SSH安全性加强"><a href="#SSH安全性加强" class="headerlink" title="SSH安全性加强"></a>SSH安全性加强</h2><h3 id="1-只允许密钥登录-非密码登录"><a href="#1-只允许密钥登录-非密码登录" class="headerlink" title="1.只允许密钥登录(非密码登录)"></a>1.只允许密钥登录(非密码登录)</h3><p>编辑SSH配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>找到并修改内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PasswordAuthentication no <span class="comment">#root密码登录</span></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span>  <span class="comment">#ssh密钥登录</span></span><br></pre></td></tr></table></figure>
+
+<p>重启SSH服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart ssh</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-修改默认SSH端口"><a href="#2-修改默认SSH端口" class="headerlink" title="2.修改默认SSH端口"></a>2.修改默认SSH端口</h3><p>讲默认的22端口改为不常见的端口(防止被扫)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#sshd_config</span></span><br><span class="line">Port 22222 <span class="comment">#防火墙也要放行端口</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="防火墙配置"><a href="#防火墙配置" class="headerlink" title="防火墙配置"></a>防火墙配置</h2><p>启动并配置UWF防火墙</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw default deny incoming</span><br><span class="line"><span class="built_in">sudo</span> ufw default allow outgoing</span><br><span class="line"><span class="built_in">sudo</span> ufw allow OpenSSH  <span class="comment"># 或你自定义的 SSH 端口</span></span><br><span class="line"><span class="built_in">sudo</span> ufw allow http</span><br><span class="line"><span class="built_in">sudo</span> ufw allow https</span><br><span class="line"><span class="built_in">sudo</span> ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Fail2ban防爆破"><a href="#Fail2ban防爆破" class="headerlink" title="Fail2ban防爆破"></a>Fail2ban防爆破</h2><p>安装并启用Fail2ban</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install fail2ban</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> fail2ban</span><br><span class="line"><span class="built_in">sudo</span> systemctl start fail2ban</span><br></pre></td></tr></table></figure>
+
+<p>可以屏蔽多次失败登录的IP,但自己不要故意去试，因为我已经试过了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-C-实现日志库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -311,7 +386,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近防火墙升级，屏蔽了22端口。GitHub 支持通过 443 端口使用 SSH（因为 443 通常用于 HTTPS 流量，不易被屏蔽）。</p>
+        <p>最近china的防火墙升级，屏蔽了22端口。GitHub 支持通过 443 端口使用 SSH（因为 443 通常用于 HTTPS 流量，不易被屏蔽）。</p>
 <h2 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> git:(master) git push origin master</span><br><span class="line">Connection closed by 20.205.243.166 port 22</span><br><span class="line">fatal: 无法读取远程仓库。</span><br><span class="line"></span><br><span class="line">请确认您有正确的访问权限并且仓库存在。</span><br></pre></td></tr></table></figure>
 
 
@@ -386,7 +461,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="方法一：通过软件源安装（推荐）"><a href="#方法一：通过软件源安装（推荐）" class="headerlink" title="方法一：通过软件源安装（推荐）"></a>方法一：通过软件源安装（推荐）</h1><h2 id="安全添加-V2RayA-软件源的-GPG-公钥"><a href="#安全添加-V2RayA-软件源的-GPG-公钥" class="headerlink" title="安全添加 V2RayA 软件源的 GPG 公钥"></a><strong>安全添加 V2RayA 软件源的 GPG 公钥</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://apt.v2raya.org/key/public-key.asc | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/keyrings/v2raya.asc</span><br></pre></td></tr></table></figure>
+        <p>阿安装v2ray的一般方法需要梯子，这几乎是个死循环，这里有两个不常见的方法</p>
+<h1 id="方法一：通过软件源安装（推荐）"><a href="#方法一：通过软件源安装（推荐）" class="headerlink" title="方法一：通过软件源安装（推荐）"></a>方法一：通过软件源安装（推荐）</h1><h2 id="安全添加-V2RayA-软件源的-GPG-公钥"><a href="#安全添加-V2RayA-软件源的-GPG-公钥" class="headerlink" title="安全添加 V2RayA 软件源的 GPG 公钥"></a><strong>安全添加 V2RayA 软件源的 GPG 公钥</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://apt.v2raya.org/key/public-key.asc | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/keyrings/v2raya.asc</span><br></pre></td></tr></table></figure>
 
 <h2 id="添加V2RayA软件源"><a href="#添加V2RayA软件源" class="headerlink" title="添加V2RayA软件源"></a>添加V2RayA软件源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2raya main&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/v2raya.list</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
 
@@ -405,8 +481,7 @@
 
 <h2 id="安装V2RayA-1"><a href="#安装V2RayA-1" class="headerlink" title="安装V2RayA"></a>安装V2RayA</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install v2raya  #默认启动和自启动</span><br></pre></td></tr></table></figure>
 
-
-
+<p>为什么不推荐snap 呢，因为snap安装的v2raya有时候有点bug</p>
 
       
     </div>
