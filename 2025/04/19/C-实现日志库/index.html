@@ -1,96 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>C++实现日志库 | zb&#39;s blog</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="调用日志库有两种高效的方式，基本思路是全局定义宏：这里使用第二种  1.使用operator&lt;&lt;重载，将log信息当作流，类似于cout&lt;&lt; 2.使用函数调用，将log信息当作函数参数，类似于print()  123456LOG_INFO&lt;&lt;&quot;服务器启动成功，端口：&quot;&lt;&lt;port;LOG_WARN&lt;&lt;&quot;连接超">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++实现日志库">
+<meta property="og:url" content="http://example.com/2025/04/19/C-%E5%AE%9E%E7%8E%B0%E6%97%A5%E5%BF%97%E5%BA%93/index.html">
+<meta property="og:site_name" content="zb&#39;s blog">
+<meta property="og:description" content="调用日志库有两种高效的方式，基本思路是全局定义宏：这里使用第二种  1.使用operator&lt;&lt;重载，将log信息当作流，类似于cout&lt;&lt; 2.使用函数调用，将log信息当作函数参数，类似于print()  123456LOG_INFO&lt;&lt;&quot;服务器启动成功，端口：&quot;&lt;&lt;port;LOG_WARN&lt;&lt;&quot;连接超">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-19T03:50:17.000Z">
+<meta property="article:modified_time" content="2025-04-19T07:29:45.296Z">
+<meta property="article:author" content="zb">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="zb&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/chicken.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
 
-  <!DOCTYPE html>
-  <html lang="zh-CN">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="description" content= >
-  <meta name="keywords" content=hexo,theme >
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/chicken.png" class="js-avatar">
+			
+		</a>
 
-  <head>
-    <title>
-      C++实现日志库 [ zb&#39;s blog ]
-    </title>
-  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="zb's blog" type="application/atom+xml">
-</head>
+		<hgroup>
+			<h1 class="header-author"><a href="/">zb</a></h1>
+		</hgroup>
 
-  <body>
+		
 
-    <link rel="stylesheet" href="/css/header.css">
-<div class="header">
-  <div class="logo">
-    <span class="pull-left">
-      <a id="site-name" href="/">
-        zb&#39;s blog
-      </a>
-    </span>
-  </div>
-  <ul class="nav-list">
-    
-      <li>
-        <a href="/">
-          首页
-        </a>
-      </li>
-      
-      <li>
-        <a href="/about">
-          关于
-        </a>
-      </li>
-      
-  </ul>
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zbchi" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/1662308219z@gmail.com" title="mail">mail</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
 </div>
-
-      <!--<link rel="stylesheet" href="/css/top-header.css">
-<div id="top-bar" class="fixed">
-
-  <a class="goto-top" href="#"></a>
-  <ul class="bar-list bar-list-1">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/chicken.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zbchi" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/1662308219z@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-C-实现日志库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/04/19/C-%E5%AE%9E%E7%8E%B0%E6%97%A5%E5%BF%97%E5%BA%93/" class="article-date">
+  	<time datetime="2025-04-19T03:50:17.000Z" itemprop="datePublished">2025-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
     
-      <li>
-        <p>
-          <a href="/">
-            <text class="bar-text bar-p1">
-              首页
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-      <li>
-        <p>
-          <a href="/about">
-            <text class="bar-text bar-p1">
-              关于
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-  </ul>
-</div>-->
-
-        <div id="content-outer">
-          <div class="content-inner">
-            <link rel="stylesheet" href="/css/post.css">
-<div class="posts">
-  <a href="/index.html"><i class="fa fa-home
-replay-btn" aria-hidden="true"></i></a>
-  <div class="post-title">
-    <p>
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
       C++实现日志库
-    </p>
-    <hr>
-  </div>
-  <div class="post-content">
-    <p>调用日志库有两种高效的方式，基本思路是全局定义宏：这里使用第二种</p>
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>调用日志库有两种高效的方式，基本思路是全局定义宏：这里使用第二种</p>
 <ul>
 <li>1.使用operator&lt;&lt;重载，将log信息当作流，类似于cout&lt;&lt;</li>
 <li>2.使用函数调用，将log信息当作函数参数，类似于print()</li>
@@ -163,21 +266,69 @@ replay-btn" aria-hidden="true"></i></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Logger.cc*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Logger.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Timestamp.h&quot;</span><span class="comment">//可以使用formatTime函数代替时间戳</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdarg&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> mylib</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    Logger::LogLevel g_logLevel = Logger::TRACE;</span><br><span class="line">    <span class="type">bool</span> showMicroseconds = <span class="literal">false</span>;</span><br><span class="line">    <span class="type">bool</span> enableColorLog = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">static</span> std::mutex g_mutex;</span><br><span class="line">    <span class="type">static</span> Logger::OutputFunc g_output = [](<span class="type">const</span> <span class="type">char</span> *msg, <span class="type">int</span> len)</span><br><span class="line">    &#123; <span class="built_in">fwrite</span>(msg, <span class="number">1</span>, len, stdout); &#125;;</span><br><span class="line">    <span class="type">static</span> Logger::FlushFunc g_flush = []()</span><br><span class="line">    &#123; <span class="built_in">fflush</span>(stdout); &#125;;</span><br><span class="line"></span><br><span class="line">    __thread <span class="type">char</span> t_errnobuf[<span class="number">512</span>];</span><br><span class="line">    __thread <span class="type">char</span> t_time[<span class="number">32</span>];</span><br><span class="line">    __thread <span class="type">time_t</span> t_lastSecond;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">char</span> *<span class="title">strerror_tl</span><span class="params">(<span class="type">int</span> savedErrno)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">strerror_r</span>(savedErrno, t_errnobuf, <span class="built_in">sizeof</span>(t_errnobuf));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">formatTime</span><span class="params">(<span class="type">char</span> *buf, <span class="type">size_t</span> size)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">time_t</span> now = <span class="built_in">time</span>(<span class="literal">nullptr</span>);</span><br><span class="line">        <span class="keyword">if</span> (now != t_lastSecond)</span><br><span class="line">        &#123;</span><br><span class="line">            t_lastSecond = now;</span><br><span class="line">            <span class="keyword">struct</span> <span class="title class_">tm</span> tm_time;</span><br><span class="line">            <span class="built_in">gmtime_r</span>(&amp;now, &amp;tm_time);</span><br><span class="line">            <span class="built_in">snprintf</span>(buf, size, <span class="string">&quot;%4d%02d%02d %02d:%02d:%02d&quot;</span>,</span><br><span class="line">                     tm_time.tm_year + <span class="number">1900</span>, tm_time.tm_mon + <span class="number">1</span>, tm_time.tm_mday,</span><br><span class="line">                     tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *levelNames[] = &#123;</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[36mTRACE\033[0m&quot;</span> : <span class="string">&quot;TRACE&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[34mDEBUG\033[0m&quot;</span> : <span class="string">&quot;DEBUG&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[32mINFO\033[0m&quot;</span> : <span class="string">&quot;INFO&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[33mWARN\033[0m&quot;</span> : <span class="string">&quot;WARN&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[31mERROR\033[0m&quot;</span> : <span class="string">&quot;ERROR&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[35mFATAL\033[0m&quot;</span> : <span class="string">&quot;FATAL&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s:%d: %s\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], file.data_, line, msg_buf);</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (level == FATAL)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *func, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s %s:%d: %s\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], func, file.data_, line, msg_buf);</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (level == FATAL)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::logSys</span><span class="params">(SourceFile file, <span class="type">int</span> line, <span class="type">bool</span> fatal, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">int</span> savedErrno = errno;</span><br><span class="line">        LogLevel level = fatal ? FATAL : ERROR;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s:%d: %s (errno=%d: %s)\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], file.data_, line, msg_buf, 		savedErrno, <span class="built_in">strerror_tl</span>(savedErrno));</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (fatal)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Logger::LogLevel <span class="title">Logger::logLevel</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> g_logLevel; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setLogLevel</span><span class="params">(LogLevel level)</span> </span>&#123; g_logLevel = level; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setOutput</span><span class="params">(OutputFunc output)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        g_output = output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setFlush</span><span class="params">(FlushFunc flush)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        g_flush = flush;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
+      
+    </div>
+    
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决github Connection closed by port 22</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
 </div>
-          </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2025 zb
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
         </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
-        
 
-          
-            <!-- scripts list from theme config.yml -->
-            
-              <script src="/js/MiHoYo.js"></script>
-              
-                
 
-  </body>
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
 
-  </html>
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

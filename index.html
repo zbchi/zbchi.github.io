@@ -1,178 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zb&#39;s blog</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="zb&#39;s blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="zb&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zb">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="zb&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/chicken.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
 
-  <!DOCTYPE html>
-  <html lang="zh-CN">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="description" content= >
-  <meta name="keywords" content=hexo,theme >
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/chicken.png" class="js-avatar">
+			
+		</a>
 
-  <head>
-    <title>
-       [ zb&#39;s blog ]
-    </title>
-  <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="zb's blog" type="application/atom+xml">
-</head>
+		<hgroup>
+			<h1 class="header-author"><a href="/">zb</a></h1>
+		</hgroup>
 
-  <body>
+		
 
-    <link rel="stylesheet" href="/css/header.css">
-<div class="header">
-  <div class="logo">
-    <span class="pull-left">
-      <a id="site-name" href="/">
-        zb&#39;s blog
-      </a>
-    </span>
-  </div>
-  <ul class="nav-list">
-    
-      <li>
-        <a href="/">
-          首页
-        </a>
-      </li>
-      
-      <li>
-        <a href="/about">
-          关于
-        </a>
-      </li>
-      
-  </ul>
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zbchi" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="/1662308219z@gmail.com" title="mail">mail</a>
+					        
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
 </div>
-
-      <!--<link rel="stylesheet" href="/css/top-header.css">
-<div id="top-bar" class="fixed">
-
-  <a class="goto-top" href="#"></a>
-  <ul class="bar-list bar-list-1">
-    
-      <li>
-        <p>
-          <a href="/">
-            <text class="bar-text bar-p1">
-              首页
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-      <li>
-        <p>
-          <a href="/about">
-            <text class="bar-text bar-p1">
-              关于
-            </text>
-            <text class="bar-text bar-p2"></text>
-          </a>
-          <text class="bar-p3">/</text>
-        </p>
-      </li>
-      
-  </ul>
-</div>-->
-
-        <div id="content-outer">
-          <div class="content-inner">
-            <link rel="stylesheet" href="/css/index.css">
-<div class="paginator">
-  <div class="content">
-    <div class="contain-box1">
-
-      <div class="hd logodiv">
-        <img src="/images/chicken.png" class="logopng" alt="logo">
-          <p class="logot">
-            zb &#39;s blog
-              <span class="logo_2"></span>
-              <h3 class="words" style="font-weight: bold;font-family: Georgia;">
-                Your Words
-              </h3>
-          </p>
-      </div>
-      <link rel="stylesheet" href="/css/nav.css">
-<div class="hd">
-  <ol class="breadcrumb">
-    
-      <li><a class="ba" href="/about">
-          关于我👀
-        </a></li>
-      
-      <li><a class="ba" target="_blank" rel="noopener" href="http://tanger.cloud/">
-          访问主站🎃
-        </a></li>
-      
-      <li><a class="ba" target="_blank" rel="noopener" href="https://github.com/zbchi">
-          GitHub🧨
-        </a></li>
-      
-  </ol>
-  <hr>
-</div>
-
     </div>
-    <div class="contain-box2">
-      <link rel="stylesheet" href="/css/index-post.css">
-
-  <div class="recent-posts">
-    <p class="p1">文章列表</p>
-    <div class="recent-post-item">
-      <ul class="notice-list" id="notice-1">
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/chicken.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zbchi" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="/1662308219z@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-C-实现日志库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/04/19/C-%E5%AE%9E%E7%8E%B0%E6%97%A5%E5%BF%97%E5%BA%93/" class="article-date">
+  	<time datetime="2025-04-19T03:50:17.000Z" itemprop="datePublished">2025-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
-          <li>
-            <a href="/2025/04/19/C-%E5%AE%9E%E7%8E%B0%E6%97%A5%E5%BF%97%E5%BA%93/">
-              C++实现日志库
-            </a>
-            <p class="notice-time" datetime="2025-04-19T03:50:17.000Z">
-              2025-04-19
-            </p>
-          </li>
-          
-          <li>
-            <a href="/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/">
-              解决github Connection closed by port 22
-            </a>
-            <p class="notice-time" datetime="2025-04-14T09:26:23.000Z">
-              2025-04-14
-            </p>
-          </li>
-          
-          <li>
-            <a href="/2025/04/14/%E6%97%A0%E4%BB%A3%E7%90%86%E4%B8%8B%E5%AE%89%E8%A3%85V2RayA-Debian-Ubuntu/">
-              无代理下安装V2RayA(Debian/Ubuntu)
-            </a>
-            <p class="notice-time" datetime="2025-04-14T03:23:53.000Z">
-              2025-04-14
-            </p>
-          </li>
-          
-      </ul>
-      <div class="list-bottom">
-        <span class="page-number current">1</span>
-      </div>
-    </div>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/04/19/C-%E5%AE%9E%E7%8E%B0%E6%97%A5%E5%BF%97%E5%BA%93/">
+        C++实现日志库
+        
+      </a>
+    </h1>
+  
 
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>调用日志库有两种高效的方式，基本思路是全局定义宏：这里使用第二种</p>
+<ul>
+<li>1.使用operator&lt;&lt;重载，将log信息当作流，类似于cout&lt;&lt;</li>
+<li>2.使用函数调用，将log信息当作函数参数，类似于print()</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LOG_INFO&lt;&lt;<span class="string">&quot;服务器启动成功，端口：&quot;</span>&lt;&lt;port;</span><br><span class="line">LOG_WARN&lt;&lt;<span class="string">&quot;连接超时:&quot;</span>&lt;&lt;connId;</span><br><span class="line">LOG_ERROR&lt;&lt;<span class="string">&quot;数据库连接失败&quot;</span>；</span><br><span class="line"><span class="built_in">LOG_INFO</span>(<span class="string">&quot;服务器启动成功，端口：%d&quot;</span>,port);</span><br><span class="line"><span class="built_in">LOG_WARN</span>(<span class="string">&quot;连接超时: %d&quot;</span>,connId);</span><br><span class="line"><span class="built_in">LOG_ERROR</span>(<span class="string">&quot;数据库连接失败&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="日志库功能"><a href="#日志库功能" class="headerlink" title="日志库功能"></a>日志库功能</h2><p>日志库（Logging Library）是用于记录运行时信息的工具组件。</p>
+<p><strong>作为server唯一输出的内容，日志库显得尤为重要</strong>。</p>
+<h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
+<li><strong>日志级别</strong> : 支持不同级别（如 DEBUG、INFO、WARN、ERROR、FATAL），方便控制输出粒度。</li>
+<li><strong>时间戳</strong>：每条日志通常包含精确的时间戳，帮助排查问题。</li>
+<li><strong>线程信息</strong>: 可选地记录线程 ID。</li>
+</ul>
+<h3 id="日志输出"><a href="#日志输出" class="headerlink" title="日志输出"></a>日志输出</h3><p>日志库可以将日志信息输出到不同的目标，包括：</p>
+<ul>
+<li><strong>终端输出</strong>：打印到终端或命令行界面，用于开发和调试。</li>
+<li><strong>文件输出</strong>：将日志写入文件中，持久存储在日志文件中。</li>
+<li><strong>网络输出</strong>：通过网络将日志发送到远程服务器或日志收集系统。</li>
+<li><strong>数据库</strong>：有些日志库允许将日志信息存储到数据库中。</li>
+</ul>
+<h3 id="输出示例"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[2025-03-14 03:40:27][TRACE] updateChannel Poller.cc:49: fd=3 events=3</span><br><span class="line">[2025-03-14 03:40:27][TRACE] EventLoop EventLoop.cc:16: EventLoop created 0x7ffd65bb0120 <span class="keyword">in</span> thread 12521</span><br><span class="line">[2025-03-14 03:40:28][TRACE] poll Poller.cc:15: 1 events happended</span><br><span class="line">[2025-03-14 03:40:28][TRACE] readTimerfd TimerQueue.cc:60: TimerQueue::handleRead() reads 8 at 1745034028.327096</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Logger类设计"><a href="#Logger类设计" class="headerlink" title="Logger类设计"></a>Logger类设计</h2><p>最基本的功能 log()，输出日志</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Logger</span></span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">enum</span> <span class="title class_">LogLevel</span></span><br><span class="line">        &#123;</span><br><span class="line">            TRACE,</span><br><span class="line">            DEBUG,</span><br><span class="line">            INFO,</span><br><span class="line">            WARN,</span><br><span class="line">            ERROR,</span><br><span class="line">            FATAL,</span><br><span class="line">            NUM_LOG_LEVALS,</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">log</span><span class="params">(SourceFilefile, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *func, <span class="type">const</span> <span class="type">char</span> *fmt...)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">logSys</span><span class="params">(SourceFile file, <span class="type">int</span> line, <span class="type">bool</span> fatal, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="type">static</span> LogLevel <span class="title">logLevel</span><span class="params">()</span></span>;<span class="comment">//设置日当前志级别</span></span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setLogLevel</span><span class="params">(LogLevel level)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*OutputFunc)</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *msg, <span class="type">int</span> len)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*FlushFunc)</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setOutput</span><span class="params">(OutputFunc)</span></span>;<span class="comment">//设置输出方式，自定义回调如输出到终端或者输出到文件</span></span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setFlush</span><span class="params">(FlushFunc)</span></span>;<span class="comment">//设置刷新缓冲方式</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="built_in">Logger</span>() = <span class="keyword">delete</span>;<span class="comment">//不允许实例化Logger类</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>配置的SouceFIle是一个小工具类，用于从__FILE__中提取文件名，避免日志中出现过长的路径</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SourceFile</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> <span class="type">char</span> *data_;</span><br><span class="line">    <span class="type">int</span> size_;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="type">int</span> N&gt;</span><br><span class="line">    <span class="built_in">SourceFile</span>(<span class="type">const</span> <span class="built_in">char</span> (&amp;arr)[N]) : <span class="built_in">data_</span>(arr), <span class="built_in">size_</span>(N - <span class="number">1</span>);</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">SourceFile</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *filename)</span> : data_(filename);</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="日志输出逻辑"><a href="#日志输出逻辑" class="headerlink" title="日志输出逻辑"></a>日志输出逻辑</h2><p>我们重点实现的格式化日志调用方式是这样的:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Logger::<span class="built_in">log</span>(__FILE__,__LINE__,Logger::INFO,fmt,...);</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现代码核心逻辑如下"><a href="#实现代码核心逻辑如下" class="headerlink" title="实现代码核心逻辑如下"></a>实现代码核心逻辑如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">formatTime</span><span class="params">(<span class="type">char</span> *buf, <span class="type">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">time_t</span> now = <span class="built_in">time</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">if</span> (now != t_lastSecond)</span><br><span class="line">    &#123;</span><br><span class="line">        t_lastSecond = now;</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">tm</span> tm_time;</span><br><span class="line">        <span class="built_in">gmtime_r</span>(&amp;now, &amp;tm_time);</span><br><span class="line">        <span class="built_in">snprintf</span>(buf, size, <span class="string">&quot;%4d%02d%02d %02d:%02d:%02d&quot;</span>,</span><br><span class="line">                 tm_time.tm_year + <span class="number">1900</span>, tm_time.tm_mon + <span class="number">1</span>, tm_time.tm_mday,</span><br><span class="line">                 tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Logger::log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">       std::string time_buf;</span><br><span class="line">       Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">       time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line">	<span class="comment">/*初始化时间也可:</span></span><br><span class="line"><span class="comment">	char timebuf[64];</span></span><br><span class="line"><span class="comment">	formatTime(buf,sizeof(buf));</span></span><br><span class="line"><span class="comment">	这里使用时间戳类避免再次实现*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//格式化用户传入的消息</span></span><br><span class="line">       <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">       va_list args;</span><br><span class="line">       <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">       <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">       <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//拼接最终输出内容</span></span><br><span class="line">       <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">       <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s:%d: %s\n&quot;</span>,</span><br><span class="line">                time_buf.<span class="built_in">c_str</span>(), levelNames[level], file.data_, line, msg_buf);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//加锁输出日志</span></span><br><span class="line">    <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">       <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">       <span class="built_in">g_flush</span>();</span><br><span class="line">    <span class="comment">//如果是FATAL级别，终止程序</span></span><br><span class="line">       <span class="keyword">if</span> (level == FATAL)</span><br><span class="line">           <span class="built_in">abort</span>();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="日志宏封装"><a href="#日志宏封装" class="headerlink" title="日志宏封装"></a>日志宏封装</h2><p>使用宏是为了让调用更简洁，自动传入__FILE__和__LINE__,日志级别等元信息:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_INFO(fmt, ...) \</span></span><br><span class="line"><span class="meta">    Logger::log(Logger::SourceFile(__FILE__), __LINE__, Logger::INFO, fmt, ##__VA_ARGS__)</span></span><br></pre></td></tr></table></figure>
+
+<p>其他宏如LOG_DEBUG,LOG_ERROR等原理类似，且按需包含函数名</p>
+<h2 id="日志等级设置"><a href="#日志等级设置" class="headerlink" title="日志等级设置"></a>日志等级设置</h2><p>可以动态设置日志等级:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Logger::<span class="built_in">setLogLevel</span>(Logger::WARN);<span class="comment">//只显示WARN以上的日志</span></span><br></pre></td></tr></table></figure>
+
+<p>日志等级是静态变量:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> Logger::LogLevel g_logLevel=Logger::INFO;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义输出与刷新"><a href="#自定义输出与刷新" class="headerlink" title="自定义输出与刷新"></a>自定义输出与刷新</h2><p>可以通过函数指针实现对输出的灵活回调：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Logger::<span class="built_in">setOutput</span>([](<span class="type">const</span> <span class="type">char</span>*msg,<span class="type">int</span> len)</span><br><span class="line">                  &#123;<span class="built_in">fwrite</span>(msg,<span class="number">1</span>,len,stdout);&#125;);</span><br><span class="line"><span class="comment">//输出到终端</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以重定向输出到文件:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FILE*fp=<span class="built_in">fopen</span>(<span class="string">&quot;log.txt&quot;</span>,<span class="string">&quot;a&quot;</span>);</span><br><span class="line">Logger::<span class="built_in">setOutput</span>([fp](<span class="type">const</span> <span class="type">char</span>* msg,<span class="type">int</span> len)</span><br><span class="line">                  &#123;<span class="built_in">fwrite</span>(msg,<span class="number">1</span>,len,fp);&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加日志颜色"><a href="#添加日志颜色" class="headerlink" title="添加日志颜色"></a>添加日志颜色</h2><p>更改levelNames[]</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *levelNames[] = &#123;</span><br><span class="line">    <span class="string">&quot;TRACE&quot;</span>,</span><br><span class="line">    <span class="string">&quot;DEBUG&quot;</span>,</span><br><span class="line">    <span class="string">&quot;INFO&quot;</span>,</span><br><span class="line">    <span class="string">&quot;WARN&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ERROR&quot;</span>,</span><br><span class="line">    <span class="string">&quot;FATAL&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>为</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *levelNames[] = &#123;</span><br><span class="line">    <span class="string">&quot;\033[36mTRACE\033[0m&quot;</span>,</span><br><span class="line">    <span class="string">&quot;\033[34mDEBUG\033[0m&quot;</span> ,</span><br><span class="line">    <span class="string">&quot;\033[32mINFO\033[0m&quot;</span> ,</span><br><span class="line">    <span class="string">&quot;\033[33mWARN\033[0m&quot;</span>,</span><br><span class="line">    <span class="string">&quot;\033[31mERROR\033[0m&quot;</span>,</span><br><span class="line">    <span class="string">&quot;\033[35mFATAL\033[0m&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>**注意事项 **</p>
+<p>如果输出到文件，也会写入颜色控制代码(就是那些<code>\033[32m</code>)，也会污染日志文件，可以通过条件判断是否加颜色 (比如<code>enableColorLog</code>)决定是否加颜色</p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Logger.h*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> LOGGER_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOGGER_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> mylib</span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_TRACE(fmt, ...)                                \</span></span><br><span class="line"><span class="meta">    <span class="keyword">if</span> (mylib::Logger::logLevel() &lt;= mylib::Logger::TRACE) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::TRACE, __func__, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_DEBUG(fmt, ...)                                \</span></span><br><span class="line"><span class="meta">    <span class="keyword">if</span> (mylib::Logger::logLevel() &lt;= mylib::Logger::DEBUG) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::DEBUG, __func__, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_INFO(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::INFO, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_WARN(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::WARN, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_ERROR(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::ERROR, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_FATAL(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::log(mylib::Logger::SourceFile(__FILE__), __LINE__, mylib::Logger::FATAL, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_SYSERR(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::logSys(mylib::Logger::SourceFile(__FILE__), __LINE__, false, fmt, ##__VA_ARGS__)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LOG_SYSFATAL(fmt, ...) \</span></span><br><span class="line"><span class="meta">    mylib::Logger::logSys(mylib::Logger::SourceFile(__FILE__), __LINE__, true, fmt, ##__VA_ARGS__)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Logger</span></span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">enum</span> <span class="title class_">LogLevel</span></span><br><span class="line">        &#123;	TRACE,DEBUG,INFO,WARN,ERROR,FATAL,NUM_LOG_LEVALS,&#125;;</span><br><span class="line">        <span class="keyword">class</span> <span class="title class_">SourceFile</span></span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">            <span class="type">const</span> <span class="type">char</span> *data_;</span><br><span class="line">            <span class="type">int</span> size_;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">template</span> &lt;<span class="type">int</span> N&gt;</span><br><span class="line">            <span class="built_in">SourceFile</span>(<span class="type">const</span> <span class="built_in">char</span> (&amp;arr)[N]) : <span class="built_in">data_</span>(arr), <span class="built_in">size_</span>(N - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">const</span> <span class="type">char</span> *slash = <span class="built_in">strrchr</span>(data_, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">                <span class="keyword">if</span> (slash)</span><br><span class="line">                &#123;</span><br><span class="line">                    data_ = slash + <span class="number">1</span>;</span><br><span class="line">                    size_ -= <span class="built_in">static_cast</span>&lt;<span class="type">int</span>&gt;(data_ - arr);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="keyword">explicit</span> <span class="title">SourceFile</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *filename)</span> : data_(filename)</span></span><br><span class="line"><span class="function">            &#123;</span></span><br><span class="line">                <span class="type">const</span> <span class="type">char</span> *slash = <span class="built_in">strrchr</span>(filename, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">                <span class="keyword">if</span> (slash)</span><br><span class="line">                &#123; data_ = slash + <span class="number">1</span>;&#125;</span><br><span class="line">                size_ = <span class="built_in">static_cast</span>&lt;<span class="type">int</span>&gt;(<span class="built_in">strlen</span>(data_));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *func, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">logSys</span><span class="params">(SourceFile file, <span class="type">int</span> line, <span class="type">bool</span> fatal, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="type">static</span> LogLevel <span class="title">logLevel</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setLogLevel</span><span class="params">(LogLevel level)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*OutputFunc)</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *msg, <span class="type">int</span> len)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*FlushFunc)</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setOutput</span><span class="params">(OutputFunc)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">setFlush</span><span class="params">(FlushFunc)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="built_in">Logger</span>() = <span class="keyword">delete</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">extern</span> Logger::LogLevel g_logLevel;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">bool</span> showMicroseconds;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">bool</span> enableColorLog;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Logger.cc*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Logger.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Timestamp.h&quot;</span><span class="comment">//可以使用formatTime函数代替时间戳</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdarg&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">namespace</span> mylib</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    Logger::LogLevel g_logLevel = Logger::TRACE;</span><br><span class="line">    <span class="type">bool</span> showMicroseconds = <span class="literal">false</span>;</span><br><span class="line">    <span class="type">bool</span> enableColorLog = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">static</span> std::mutex g_mutex;</span><br><span class="line">    <span class="type">static</span> Logger::OutputFunc g_output = [](<span class="type">const</span> <span class="type">char</span> *msg, <span class="type">int</span> len)</span><br><span class="line">    &#123; <span class="built_in">fwrite</span>(msg, <span class="number">1</span>, len, stdout); &#125;;</span><br><span class="line">    <span class="type">static</span> Logger::FlushFunc g_flush = []()</span><br><span class="line">    &#123; <span class="built_in">fflush</span>(stdout); &#125;;</span><br><span class="line"></span><br><span class="line">    __thread <span class="type">char</span> t_errnobuf[<span class="number">512</span>];</span><br><span class="line">    __thread <span class="type">char</span> t_time[<span class="number">32</span>];</span><br><span class="line">    __thread <span class="type">time_t</span> t_lastSecond;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">const</span> <span class="type">char</span> *<span class="title">strerror_tl</span><span class="params">(<span class="type">int</span> savedErrno)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">strerror_r</span>(savedErrno, t_errnobuf, <span class="built_in">sizeof</span>(t_errnobuf));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">formatTime</span><span class="params">(<span class="type">char</span> *buf, <span class="type">size_t</span> size)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">time_t</span> now = <span class="built_in">time</span>(<span class="literal">nullptr</span>);</span><br><span class="line">        <span class="keyword">if</span> (now != t_lastSecond)</span><br><span class="line">        &#123;</span><br><span class="line">            t_lastSecond = now;</span><br><span class="line">            <span class="keyword">struct</span> <span class="title class_">tm</span> tm_time;</span><br><span class="line">            <span class="built_in">gmtime_r</span>(&amp;now, &amp;tm_time);</span><br><span class="line">            <span class="built_in">snprintf</span>(buf, size, <span class="string">&quot;%4d%02d%02d %02d:%02d:%02d&quot;</span>,</span><br><span class="line">                     tm_time.tm_year + <span class="number">1900</span>, tm_time.tm_mon + <span class="number">1</span>, tm_time.tm_mday,</span><br><span class="line">                     tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *levelNames[] = &#123;</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[36mTRACE\033[0m&quot;</span> : <span class="string">&quot;TRACE&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[34mDEBUG\033[0m&quot;</span> : <span class="string">&quot;DEBUG&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[32mINFO\033[0m&quot;</span> : <span class="string">&quot;INFO&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[33mWARN\033[0m&quot;</span> : <span class="string">&quot;WARN&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[31mERROR\033[0m&quot;</span> : <span class="string">&quot;ERROR&quot;</span>,</span><br><span class="line">        mylib::enableColorLog ? <span class="string">&quot;\033[35mFATAL\033[0m&quot;</span> : <span class="string">&quot;FATAL&quot;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s:%d: %s\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], file.data_, line, msg_buf);</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (level == FATAL)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::log</span><span class="params">(SourceFile file, <span class="type">int</span> line, LogLevel level, <span class="type">const</span> <span class="type">char</span> *func, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s %s:%d: %s\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], func, file.data_, line, msg_buf);</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (level == FATAL)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::logSys</span><span class="params">(SourceFile file, <span class="type">int</span> line, <span class="type">bool</span> fatal, <span class="type">const</span> <span class="type">char</span> *fmt, ...)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">int</span> savedErrno = errno;</span><br><span class="line">        LogLevel level = fatal ? FATAL : ERROR;</span><br><span class="line">        <span class="keyword">if</span> (level &lt; g_logLevel)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">        std::string time_buf;</span><br><span class="line">        Timestamp timestamp = Timestamp::<span class="built_in">now</span>();</span><br><span class="line">        time_buf = timestamp.<span class="built_in">toFormattedString</span>(showMicroseconds);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> msg_buf[<span class="number">1024</span>];</span><br><span class="line">        va_list args;</span><br><span class="line">        <span class="built_in">va_start</span>(args, fmt);</span><br><span class="line">        <span class="built_in">vsnprintf</span>(msg_buf, <span class="built_in">sizeof</span>(msg_buf), fmt, args);</span><br><span class="line">        <span class="built_in">va_end</span>(args);</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> line_buf[<span class="number">2048</span>];</span><br><span class="line">        <span class="built_in">snprintf</span>(line_buf, <span class="built_in">sizeof</span>(line_buf), <span class="string">&quot;[%s][%s] %s:%d: %s (errno=%d: %s)\n&quot;</span>,</span><br><span class="line">                 time_buf.<span class="built_in">c_str</span>(), levelNames[level], file.data_, line, msg_buf, 		savedErrno, <span class="built_in">strerror_tl</span>(savedErrno));</span><br><span class="line"></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        <span class="built_in">g_output</span>(line_buf, <span class="built_in">strlen</span>(line_buf));</span><br><span class="line">        <span class="built_in">g_flush</span>();</span><br><span class="line">        <span class="keyword">if</span> (fatal)</span><br><span class="line">            <span class="built_in">abort</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Logger::LogLevel <span class="title">Logger::logLevel</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> g_logLevel; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setLogLevel</span><span class="params">(LogLevel level)</span> </span>&#123; g_logLevel = level; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setOutput</span><span class="params">(OutputFunc output)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        g_output = output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Logger::setFlush</span><span class="params">(FlushFunc flush)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(g_mutex)</span></span>;</span><br><span class="line">        g_flush = flush;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
   </div>
   
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-解决github-Connection-closed-by-port-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/" class="article-date">
+  	<time datetime="2025-04-14T09:26:23.000Z" itemprop="datePublished">2025-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/04/14/%E8%A7%A3%E5%86%B3github-Connection-closed-by-port-22/">
+        解决github Connection closed by port 22
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近防火墙升级，屏蔽了22端口。GitHub 支持通过 443 端口使用 SSH（因为 443 通常用于 HTTPS 流量，不易被屏蔽）。</p>
+<h2 id="问题示例"><a href="#问题示例" class="headerlink" title="问题示例"></a>问题示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> git:(master) git push origin master</span><br><span class="line">Connection closed by 20.205.243.166 port 22</span><br><span class="line">fatal: 无法读取远程仓库。</span><br><span class="line"></span><br><span class="line">请确认您有正确的访问权限并且仓库存在。</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="配置SSH默认使用443端口"><a href="#配置SSH默认使用443端口" class="headerlink" title="配置SSH默认使用443端口"></a>配置SSH默认使用443端口</h1><h2 id="1-修改SSH配置文件"><a href="#1-修改SSH配置文件" class="headerlink" title="1.修改SSH配置文件"></a>1.修改SSH配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#添加以下内容</span><br><span class="line">Host github.com</span><br><span class="line">    Hostname ssh.github.com</span><br><span class="line">    Port 443</span><br><span class="line">    User git</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-设置文件权限"><a href="#2-设置文件权限" class="headerlink" title="2.设置文件权限"></a>2.设置文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 600 ~/.ssh/config</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-测试连接"><a href="#3-测试连接" class="headerlink" title="3.测试连接"></a>3.测试连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>可以看到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi guy! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就可以重新 <code>git push origin main/master</code>了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-无代理下安装V2RayA-Debian-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/04/14/%E6%97%A0%E4%BB%A3%E7%90%86%E4%B8%8B%E5%AE%89%E8%A3%85V2RayA-Debian-Ubuntu/" class="article-date">
+  	<time datetime="2025-04-14T03:23:53.000Z" itemprop="datePublished">2025-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/04/14/%E6%97%A0%E4%BB%A3%E7%90%86%E4%B8%8B%E5%AE%89%E8%A3%85V2RayA-Debian-Ubuntu/">
+        无代理下安装V2RayA(Debian/Ubuntu)
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="方法一：通过软件源安装（推荐）"><a href="#方法一：通过软件源安装（推荐）" class="headerlink" title="方法一：通过软件源安装（推荐）"></a>方法一：通过软件源安装（推荐）</h1><h2 id="安全添加-V2RayA-软件源的-GPG-公钥"><a href="#安全添加-V2RayA-软件源的-GPG-公钥" class="headerlink" title="安全添加 V2RayA 软件源的 GPG 公钥"></a><strong>安全添加 V2RayA 软件源的 GPG 公钥</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://apt.v2raya.org/key/public-key.asc | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/keyrings/v2raya.asc</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加V2RayA软件源"><a href="#添加V2RayA软件源" class="headerlink" title="添加V2RayA软件源"></a>添加V2RayA软件源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2raya main&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/v2raya.list</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装V2RayA"><a href="#安装V2RayA" class="headerlink" title="安装V2RayA"></a>安装V2RayA</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install v2raya v2ray </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="启动v2rayA-自启动v2rayA"><a href="#启动v2rayA-自启动v2rayA" class="headerlink" title="启动v2rayA&#x2F;自启动v2rayA"></a>启动v2rayA&#x2F;自启动v2rayA</h2><ul>
+<li><p>启动v2rayA</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start v2raya.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置开机自启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> v2raya.service</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="方法二：通过Snap包安装"><a href="#方法二：通过Snap包安装" class="headerlink" title="方法二：通过Snap包安装"></a>方法二：通过Snap包安装</h1><h2 id="安装Snap"><a href="#安装Snap" class="headerlink" title="安装Snap"></a>安装Snap</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install snapd</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装V2RayA-1"><a href="#安装V2RayA-1" class="headerlink" title="安装V2RayA"></a>安装V2RayA</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install v2raya  #默认启动和自启动</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2025 zb
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
     </div>
   </div>
-</div>
-          </div>
-        </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
-        
 
-          
-            <!-- scripts list from theme config.yml -->
-            
-              <script src="/js/MiHoYo.js"></script>
-              
-                
 
-  </body>
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
 
-  </html>
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
